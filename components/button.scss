@@ -1,0 +1,25 @@
+.btn {
+  font-size: 16px;
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 8px;
+
+  // Variant
+  &.primary {
+    color: #FFFFFF;
+    background-color: #D00B0B;
+    border: 0;
+    border-color: #D00B0B;
+  }
+  &.primary-outline {
+    color: #D00B0B;
+    background-color: transparent;
+    border: 1px solid #D8D8D8;
+  }
+
+  // Size
+  &.sm {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
