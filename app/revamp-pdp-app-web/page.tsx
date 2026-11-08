@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { groceryProducts } from "./products";
 import "./style.scss";
+import Image from "next/image";
+import voucherIcon from "../../assets/icons/ic-voucher.png";
 
 const formatPrice = (price: number) => `Rp ${price.toLocaleString("id-ID")}`;
 
@@ -115,12 +117,12 @@ export default function RevampPdpAppWebPage() {
           <p className="mt-1 text-sm text-slate-500">Pilih produk untuk lihat detail</p>
         </header>
 
-        <ul className="grid grid-cols-2 gap-3">
+        <ul className="grid grid-cols-2 gap-2">
           {groceryProducts.map((product, index) => (
             <li key={product.id} className="min-w-0">
               <div
                 onClick={() => openProduct(index)}
-                className="group block w-full overflow-hidden rounded-xl border border-slate-200 bg-white text-left shadow-sm transition-shadow hover:shadow-md"
+                className="group block w-full overflow-hidden rounded-xl border border-slate-200 bg-white text-left"
               >
                 <div className="aspect-square overflow-hidden bg-slate-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -246,6 +248,68 @@ export default function RevampPdpAppWebPage() {
                       <div className="text-xs p-1 bg-neutral-100 rounded-md border border-neutral-200">Sabun Cuci Piring</div>
                       <div className="text-xs p-1 bg-neutral-100 rounded-md border border-neutral-200">Jeruk Nipis</div>
                       <div className="text-xs p-1 bg-neutral-100 rounded-md border border-neutral-200">650g</div>
+                    </div>
+                  </div>
+                  <div className="py-4 bg-white mb-2">
+                    <div className="flex items-center justify-between gap-2 mb-1 px-4">
+                      <p className="font-black text-base">Lebih hemat pakai voucher</p>
+                      <span className="font-black text-xs text-sky-700">Lihat Semua</span>
+                    </div>
+                    <div className="pt-2 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <ul className="flex gap-2 px-4 mr-4">
+                        <li>
+                          <div className="flex items-center gap-2 voucher-list">
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src={voucherIcon}
+                                alt="Voucher"
+                                width={16}
+                                height={16}
+                              />
+                              <div>
+                                <p className="font-black text-xs voucher-title">Diskon Rp5.000</p>
+                                <span className="text-neutral-500 text-xs">Min. beli 6 pcs</span>
+                              </div>
+                            </div>
+                            <span className="text-xs font-black text-red-700">Detail</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center gap-2 voucher-list">
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src={voucherIcon}
+                                alt="Voucher"
+                                width={16}
+                                height={16}
+                              />
+                              <div>
+                                <p className="font-black text-xs voucher-title">Gratis Polytex Sabut Spons Pencuci Piring Regular</p>
+                                <span className="text-neutral-500 text-xs">Min. beli 4 pcs</span>
+                              </div>
+                            </div>
+                            <span className="text-xs font-black text-red-700">Detail</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="flex items-center gap-2 voucher-list">
+                            <div className="flex items-center gap-1">
+                              <Image
+                                src={voucherIcon}
+                                alt="Voucher"
+                                width={16}
+                                height={16}
+                              />
+                              <div>
+                                <p className="font-black text-xs voucher-title">Diskon Rp1.000</p>
+                                <span className="text-neutral-500 text-xs">Min. beli 2 pcs</span>
+                              </div>
+                            </div>
+                            <span className="text-xs font-black text-red-700">Detail</span>
+                          </div>
+                        </li>
+                        <li>&nbsp;</li>
+                      </ul>
                     </div>
                   </div>
                   <div className="p-4 bg-white mb-2">
